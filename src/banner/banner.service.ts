@@ -9,7 +9,14 @@ export class BannerService {
   }
 
   findAll() {
-    return `This action returns all banner`;
+    return {status:200,
+      message:'成功',
+      name:'banner',
+      imagelist:[
+        {url:''},
+        {url:''},
+        {url:''},
+      ]};
   }
 
   findOne(id: number) {

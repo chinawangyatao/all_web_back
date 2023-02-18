@@ -14,12 +14,7 @@ export class BannerController {
 
   @Get()
   findAll() {
-    return {
-      name:'banner',
-      imagesList: [{url:'../public/11.jpg'}],
-      message:'成功',
-      status: 200
-    };
+    return this.bannerService.findAll();
   }
 
   @Get(':id')
