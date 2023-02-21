@@ -1,15 +1,19 @@
 import { Injectable } from '@nestjs/common';
 import { CreateHouseDto } from './dto/create-house.dto';
 import { UpdateHouseDto } from './dto/update-house.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { House } from './entities/house.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class HouseService {
+  constructor (@InjectRepository(House) private readonly house:Repository<House>){}
   create(createHouseDto: CreateHouseDto) {
     return 'This action adds a new house';
   }
 
   findAll() {
-    return `This action returns all house`;
+    return this.house.find();
   }
 
   findOne(id: number) {
