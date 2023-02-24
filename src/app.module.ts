@@ -3,8 +3,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CategoryController } from './category/category.controller';
 import { BannerModule } from './banner/banner.module';
-import { ServeStaticModule } from '@nestjs/serve-static';
-import { join } from 'path';
 import { AboutusModule } from './aboutus/aboutus.module';
 import { NewarticleModule } from './newarticle/newarticle.module';
 import { CodemoduleModule } from './codemodule/codemodule.module';
@@ -17,12 +15,20 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [BannerModule,TypeOrmModule.forRoot({
-    type: "mysql", //数据库类型
-    username: "root", //账号
-    password: "88888888", //密码
-    host: "localhost", //host
+    // type: "mysql", //数据库类型
+    // username: "root", //账号
+    // password: "88888888", //密码
+    // host: "localhost", //host
+    // port: 3306, //
+    // database: "user", //库名
+
+    // 线上地址
+    username: "nest_daidaidd", //账号
+    password: "Fz7cptaC4ni4XC3M", //密码
+    host: "127.0.0.1", //host
     port: 3306, //
-    database: "user", //库名
+    database: "nest_daidaidd", //库名
+
     // entities: [__dirname + '/**/*.entity{.ts,.js}'], //实体文件
     synchronize:true, //synchronize字段代表是否自动将实体类同步到数据库
     retryDelay:500, //重试连接数据库间隔
