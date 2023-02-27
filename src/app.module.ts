@@ -10,24 +10,25 @@ import { HouseModule } from './house/house.module';
 import { RecommendModule } from './recommend/recommend.module';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ProjectModule } from './project/project.module';
 
 
 
 @Module({
   imports: [BannerModule,TypeOrmModule.forRoot({
-    // type: "mysql", //数据库类型
-    // username: "root", //账号
-    // password: "88888888", //密码
-    // host: "localhost", //host
-    // port: 3306, //
-    // database: "user", //库名
+    type: "mysql", //数据库类型
+    username: "root", //账号
+    password: "88888888", //密码
+    host: "localhost", //host
+    port: 3306, //
+    database: "user", //库名
 
     // 线上地址
-    username: "nest_daidaidd", //账号
-    password: "Fz7cptaC4ni4XC3M", //密码
-    host: "127.0.0.1", //host
-    port: 3306, //
-    database: "nest_daidaidd", //库名
+    // username: "nest_daidaidd", //账号
+    // password: "Fz7cptaC4ni4XC3M", //密码
+    // host: "127.0.0.1", //host
+    // port: 3306, //
+    // database: "nest_daidaidd", //库名
 
     // entities: [__dirname + '/**/*.entity{.ts,.js}'], //实体文件
     synchronize:true, //synchronize字段代表是否自动将实体类同步到数据库
@@ -40,7 +41,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   CodemoduleModule,
   HouseModule,
   RecommendModule,
-  UsersModule
+  UsersModule,
+  ProjectModule
   ],
   controllers: [AppController, CategoryController],
   providers: [AppService],
