@@ -17,11 +17,11 @@ import { ProjectModule } from './project/project.module';
 @Module({
   imports: [BannerModule,TypeOrmModule.forRoot({
     type: "mysql", //数据库类型
-    username: "root", //账号
+    username: "root1", //账号
     password: "88888888", //密码
-    host: "localhost", //host
+    host: "123.168.95.215", //host
     port: 3306, //
-    database: "user", //库名
+    database: "mybolg", //库名
 
     // 线上地址
     // username: "nest_daidaidd", //账号
